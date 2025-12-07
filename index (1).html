@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoundStage Pro - Rental Sound System & Alat Panggung</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-dark: #0a0a0a;
+            --secondary-dark: #1a1a1a;
+            --accent-red: #8B0000;
+            --accent-light-red: #a52a2a;
+            --text-light: #f8f9fa;
+            --text-gray: #cccccc;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+        
+        /* Navbar Styling */
+        .navbar {
+            background-color: rgba(10, 10, 10, 0.95) !important;
+            padding: 15px 0;
+            border-bottom: 2px solid var(--accent-red);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--text-light) !important;
+        }
+        
+        .navbar-brand span {
+            color: var(--accent-red);
+        }
+        
+        .nav-link {
+            color: var(--text-gray) !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        
+        .nav-link:hover {
+            color: var(--accent-red) !important;
+        }
+        
+        .navbar-toggler {
+            border-color: var(--accent-red);
+        }
+        
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28139, 0, 0, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.9)), url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 120px 0 100px;
+            text-align: center;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+        
+        .btn-primary-custom {
+            background-color: var(--accent-red);
+            border-color: var(--accent-red);
+            color: white;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 0;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary-custom:hover {
+            background-color: #6a0000;
+            border-color: #6a0000;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Section Styling */
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-red);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Cards Styling */
+        .product-card {
+            background-color: var(--secondary-dark);
+            border: 1px solid #333;
+            border-radius: 0;
+            transition: all 0.3s;
+            height: 100%;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-red);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .product-img {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        .card-title {
+            color: var(--text-light);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .card-text {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+        
+        .price-tag {
+            color: var(--accent-red);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        
+        /* Founder Section */
+        .founder-section {
+            background-color: var(--secondary-dark);
+            padding: 100px 0;
+        }
+        
+        .founder-img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid var(--accent-red);
+            margin-bottom: 30px;
+        }
+        
+        .founder-name {
+            font-size: 2rem;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+        
+        .founder-title {
+            color: var(--accent-red);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 0;
+        }
+        
+        .contact-info {
+            background-color: var(--secondary-dark);
+            padding: 30px;
+            height: 100%;
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .contact-item {
+            margin-bottom: 25px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .contact-icon {
+            background-color: var(--accent-red);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .contact-form {
+            background-color: var(--secondary-dark);
+            padding: 30px;
+        }
+        
+        .form-control, .form-select {
+            background-color: #333;
+            border: 1px solid #555;
+            border-radius: 0;
+            color: var(--text-light);
+            padding: 12px 15px;
+        }
+        
+        .form-control:focus, .form-select:focus {
+            background-color: #333;
+            border-color: var(--accent-red);
+            color: var(--text-light);
+            box-shadow: 0 0 0 0.25rem rgba(139, 0, 0, 0.25);
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #0a0a0a;
+            padding: 60px 0 30px;
+            border-top: 2px solid var(--accent-red);
+        }
+        
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo span {
+            color: var(--accent-red);
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--accent-red);
+            transform: translateY(-5px);
+        }
+        
+        .footer-links h5 {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-red);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid #333;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+        
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--accent-red);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            z-index: 1000;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Cart Badge */
+        .cart-badge {
+            background-color: var(--accent-red);
+            color: white;
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: -5px;
+            right: -5px;
+        }
+        
+        /* Modal Styling */
+        .modal-content {
+            background-color: var(--secondary-dark);
+            color: var(--text-light);
+            border-radius: 0;
+            border: 1px solid #333;
+        }
+        
+        .modal-header {
+            border-bottom: 1px solid #333;
+        }
+        
+        .modal-footer {
+            border-top: 1px solid #333;
+        }
+        
+        .btn-close {
+            filter: invert(1) grayscale(100%) brightness(200%);
+        }
+    </style>
+</head>
+<body>
+    <!-- Back to top button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">IAN<span>Parkins</span> Pro</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products">Produk & Layanan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#founder">Founder</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Kontak</a>
+                    </li>
+                    <li class="nav-item position-relative">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#cartModal">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-badge" id="cartCount">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <h1 class="hero-title">Rental Sound System & Alat Panggung Profesional</h1>
+            <p class="hero-subtitle">Menyediakan peralatan audio, lighting, dan panggung terbaik untuk acara konser, pernikahan, seminar, dan berbagai acara lainnya. Kualitas premium dengan harga terjangkau.</p>
+            <a href="#products" class="btn btn-primary-custom">Jelajahi Layanan</a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="py-5" id="products">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2>Produk & Layanan</h2>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Product 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card product-card">
+                        <img src="sound_01.jpg" class="card-img-top product-img" alt="Sound System">
+                        <div class="card-body">
+                            <h5 class="card-title">Sound System Professional</h5>
+                            <p class="card-text">Sistem audio lengkap dengan mixer, amplifier, speaker, dan mikrofon untuk acara indoor/outdoor kapasitas 100-5000 orang.</p>
+                            <p class="price-tag">Rp 2.500.000 - Rp 15.000.000 / hari</p>
+                            <button class="btn btn-primary-custom btn-sm add-to-cart" data-product="Sound System Professional">Tambah ke Keranjang</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card product-card">
+                        <img src="sound_03.jpg" class="card-img-top product-img" alt="Lighting System">
+                        <div class="card-body">
+                            <h5 class="card-title">Lighting & Efek Panggung</h5>
+                            <p class="card-text">Pencahayaan panggung profesional dengan moving head, laser, strobe, smoke machine untuk menciptakan atmosfer spektakuler.</p>
+                            <p class="price-tag">Rp 1.500.000 - Rp 10.000.000 / hari</p>
+                            <button class="btn btn-primary-custom btn-sm add-to-cart" data-product="Lighting & Efek Panggung">Tambah ke Keranjang</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card product-card">
+                        <img src="sound_05.jpg" class="card-img-top product-img" alt="Panggung Portable">
+                        <div class="card-body">
+                            <h5 class="card-title">Panggung Portable & Truss</h5>
+                            <p class="card-text">Panggung modular berbagai ukuran, truss system, dan canopy untuk kebutuhan acara indoor maupun outdoor.</p>
+                            <p class="price-tag">Rp 3.000.000 - Rp 20.000.000 / hari</p>
+                            <button class="btn btn-primary-custom btn-sm add-to-cart" data-product="Panggung Portable & Truss">Tambah ke Keranjang</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card product-card">
+                        <img src="https://tendasidomulyo.com/wp-content/uploads/2023/11/Alat-panggung-konser.jpg" class="card-img-top product-img" alt="Alat Musik">
+                        <div class="card-body">
+                            <h5 class="card-title">Rental Alat Musik</h5>
+                            <p class="card-text">Penyewaan alat musik lengkap seperti drum set, gitar, bass, keyboard, dan peralatan band lainnya dengan kualitas terbaik.</p>
+                            <p class="price-tag">Rp 500.000 - Rp 3.000.000 / hari</p>
+                            <button class="btn btn-primary-custom btn-sm add-to-cart" data-product="Rental Alat Musik">Tambah ke Keranjang</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card product-card">
+                        <img src="sound_04.jpg" class="card-img-top product-img" alt="LED Screen">
+                        <div class="card-body">
+                            <h5 class="card-title">LED Screen & Proyektor</h5>
+                            <p class="card-text">LED wall dan proyektor dengan resolusi tinggi untuk tampilan visual yang memukau pada acara Anda.</p>
+                            <p class="price-tag">Rp 4.000.000 - Rp 25.000.000 / hari</p>
+                            <button class="btn btn-primary-custom btn-sm add-to-cart" data-product="LED Screen & Proyektor">Tambah ke Keranjang</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 6 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card product-card">
+                        <img src="sound_06.jpg" class="card-img-top product-img" alt="Paket Lengkap">
+                        <div class="card-body">
+                            <h5 class="card-title">Paket Event Lengkap</h5>
+                            <p class="card-text">Paket all-in-one untuk acara besar termasuk sound system, lighting, panggung, dan peralatan pendukung lainnya.</p>
+                            <p class="price-tag">Rp 10.000.000 - Rp 50.000.000 / hari</p>
+                            <button class="btn btn-primary-custom btn-sm add-to-cart" data-product="Paket Event Lengkap">Tambah ke Keranjang</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section class="founder-section" id="founder">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2>Founder & CEO</h2>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row align-items-center">
+                <div class="col-lg-4 text-center">
+                    <img src="pak iyan.jpg" class="founder-img" alt="Founder & CEO">
+                </div>
+                <div class="col-lg-8">
+                    <h3 class="founder-name">Risdiyan</h3>
+                    <h4 class="founder-title">Founder & CEO SoundStage Pro</h4>
+                    <p class="card-text">Dengan pengalaman lebih dari 15 tahun di industri hiburan dan event management, Ahmad Rizki Maulana mendirikan SoundStage Pro pada tahun 2010 dengan visi untuk menyediakan peralatan panggung dan sound system berkualitas tinggi dengan layanan terbaik.</p>
+                    <p class="card-text">Latar belakangnya sebagai sound engineer untuk berbagai konser nasional dan internasional memberikannya pengetahuan mendalam tentang kebutuhan teknis acara besar. Di bawah kepemimpinannya, SoundStage Pro telah melayani lebih dari 2.000 acara termasuk konser musik, pernikahan, seminar korporat, dan festival budaya.</p>
+                    <p class="card-text">"Passion saya adalah menciptakan pengalaman audio-visual yang tak terlupakan untuk setiap acara. Setiap klien memiliki kebutuhan unik, dan tim kami berkomitmen untuk memberikan solusi yang tepat dan profesional."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2>Hubungi Kami</h2>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-5">
+                    <div class="contact-info">
+                        <h3 class="mb-4">Informasi Kontak</h3>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h5>Alamat</h5>
+                                <p>JFJP+G7H, Cibeureum, Kec. Banjar, Kota Banjar, Jawa Barat 46313</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h5>Telepon</h5>
+                                <p>+62 21 1234 5678</p>
+                                <p>+62 812 3456 7890 (WhatsApp)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h5>Email</h5>
+                                <p>info@soundstagepro.co.id</p>
+                                <p>rental@soundstagepro.co.id</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h5>Jam Operasional</h5>
+                                <p>Senin - Jumat: 08:00 - 22:00 WIB</p>
+                                <p>Sabtu - Minggu: 08:00 - 24:00 WIB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-7">
+                    <div class="contact-form">
+                        <h3 class="mb-4">Form Pemesanan</h3>
+                        <form id="rentalForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="name" class="form-label">Nama Lengkap</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="phone" class="form-label">Nomor Telepon</label>
+                                    <input type="tel" class="form-control" id="phone" required>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="product" class="form-label">Produk/Jasa yang Diminati</label>
+                                <select class="form-select" id="product" required>
+                                    <option value="">Pilih produk/jasa</option>
+                                    <option value="Sound System Professional">Sound System Professional</option>
+                                    <option value="Lighting & Efek Panggung">Lighting & Efek Panggung</option>
+                                    <option value="Panggung Portable & Truss">Panggung Portable & Truss</option>
+                                    <option value="Rental Alat Musik">Rental Alat Musik</option>
+                                    <option value="LED Screen & Proyektor">LED Screen & Proyektor</option>
+                                    <option value="Paket Event Lengkap">Paket Event Lengkap</option>
+                                </select>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="eventDate" class="form-label">Tanggal Acara</label>
+                                    <input type="date" class="form-control" id="eventDate" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="duration" class="form-label">Durasi (hari)</label>
+                                    <input type="number" class="form-control" id="duration" min="1" max="30" value="1" required>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Detail Acara & Kebutuhan Khusus</label>
+                                <textarea class="form-control" id="message" rows="4" placeholder="Jelaskan tentang acara Anda, lokasi, kapasitas tamu, dan kebutuhan khusus lainnya"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary-custom">Kirim Permintaan</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-logo">Sound<span>Stage</span> Pro</div>
+                    <p class="mb-4">Penyedia jasa rental sound system dan alat panggung profesional dengan pengalaman lebih dari 10 tahun melayani berbagai acara skala nasional.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <div class="footer-links">
+                        <h5>Layanan</h5>
+                        <ul>
+                            <li><a href="#products">Sound System</a></li>
+                            <li><a href="#products">Lighting</a></li>
+                            <li><a href="#products">Panggung Portable</a></li>
+                            <li><a href="#products">Alat Musik</a></li>
+                            <li><a href="#products">LED Screen</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <div class="footer-links">
+                        <h5>Perusahaan</h5>
+                        <ul>
+                            <li><a href="#founder">Tentang Kami</a></li>
+                            <li><a href="#founder">Founder</a></li>
+                            <li><a href="#contact">Kontak</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Karir</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-12 mb-4">
+                    <div class="footer-links">
+                        <h5>Metode Pembayaran</h5>
+                        <div class="d-flex flex-wrap">
+                            <i class="fab fa-cc-visa fa-2x me-3 mb-3" style="color: #cccccc;"></i>
+                            <i class="fab fa-cc-mastercard fa-2x me-3 mb-3" style="color: #cccccc;"></i>
+                            <i class="fab fa-cc-paypal fa-2x me-3 mb-3" style="color: #cccccc;"></i>
+                            <i class="fab fa-cc-amazon-pay fa-2x me-3 mb-3" style="color: #cccccc;"></i>
+                            <i class="fas fa-university fa-2x me-3 mb-3" style="color: #cccccc;"></i>
+                        </div>
+                        <p class="mt-2">Transfer bank, kartu kredit, e-wallet, dan cash diterima.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12">
+                    <div class="copyright">
+                        <p>&copy; 2023 SoundStage Pro. All rights reserved. | Developed with <i class="fas fa-heart" style="color: #8B0000;"></i> for the event industry</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Keranjang Pemesanan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="table-responsive">
+                        <table class="table table-dark table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Produk</th>
+                                    <th scope="col">Harga</th>
+                                    <th scope="col">Durasi</th>
+                                    <th scope="col">Subtotal</th>
+                                    <th scope="col">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cartItems">
+                                <!-- Cart items will be added here dynamically -->
+                                <tr id="emptyCartMessage">
+                                    <td colspan="5" class="text-center">Keranjang Anda kosong</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Kode Promo" id="promoCode">
+                                <button class="btn btn-outline-light" type="button" id="applyPromo">Terapkan</button>
+                            </div>
+                        </div>
+                        <div class="col-md-6 text-end">
+                            <h5>Total: <span id="cartTotal">Rp 0</span></h5>
+                            <p class="text-success" id="discountMessage" style="display: none;">Diskon 10% diterapkan!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Lanjutkan Belanja</button>
+                    <button type="button" class="btn btn-primary-custom" id="checkoutBtn">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Cart functionality
+        let cart = [];
+        let discountApplied = false;
+        
+        // Initialize cart from localStorage
+        function initCart() {
+            const savedCart = localStorage.getItem('soundstageCart');
+            if (savedCart) {
+                cart = JSON.parse(savedCart);
+                updateCartCount();
+                updateCartModal();
+            }
+        }
+        
+        // Update cart count in navbar
+        function updateCartCount() {
+            const cartCount = document.getElementById('cartCount');
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.textContent = totalItems;
+        }
+        
+        // Update cart modal content
+        function updateCartModal() {
+            const cartItemsContainer = document.getElementById('cartItems');
+            const emptyCartMessage = document.getElementById('emptyCartMessage');
+            const cartTotalElement = document.getElementById('cartTotal');
+            
+            // Clear existing items except the empty message
+            cartItemsContainer.innerHTML = '';
+            cartItemsContainer.appendChild(emptyCartMessage);
+            
+            if (cart.length === 0) {
+                emptyCartMessage.style.display = '';
+                cartTotalElement.textContent = 'Rp 0';
+                return;
+            }
+            
+            emptyCartMessage.style.display = 'none';
+            
+            let total = 0;
+            
+            cart.forEach((item, index) => {
+                // Calculate price based on duration
+                const itemSubtotal = item.price * item.duration;
+                total += itemSubtotal;
+                
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${item.name}</td>
+                    <td>Rp ${item.price.toLocaleString('id-ID')}/hari</td>
+                    <td>
+                        <input type="number" class="form-control form-control-sm duration-input" style="width: 80px; display: inline-block;" min="1" max="30" value="${item.duration}" data-index="${index}">
+                    </td>
+                    <td>Rp ${itemSubtotal.toLocaleString('id-ID')}</td>
+                    <td>
+                        <button class="btn btn-danger btn-sm remove-item" data-index="${index}">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </td>
+                `;
+                cartItemsContainer.appendChild(row);
+            });
+            
+            // Apply discount if any
+            if (discountApplied) {
+                total *= 0.9; // 10% discount
+                document.getElementById('discountMessage').style.display = 'block';
+            } else {
+                document.getElementById('discountMessage').style.display = 'none';
+            }
+            
+            cartTotalElement.textContent = `Rp ${total.toLocaleString('id-ID')}`;
+            
+            // Add event listeners to duration inputs
+            document.querySelectorAll('.duration-input').forEach(input => {
+                input.addEventListener('change', function() {
+                    const index = parseInt(this.dataset.index);
+                    const newDuration = parseInt(this.value);
+                    
+                    if (newDuration >= 1 && newDuration <= 30) {
+                        cart[index].duration = newDuration;
+                        saveCart();
+                        updateCartModal();
+                    } else {
+                        this.value = cart[index].duration;
+                    }
+                });
+            });
+            
+            // Add event listeners to remove buttons
+            document.querySelectorAll('.remove-item').forEach(button => {
+                button.addEventListener('click', function() {
+                    const index = parseInt(this.dataset.index);
+                    cart.splice(index, 1);
+                    saveCart();
+                    updateCartCount();
+                    updateCartModal();
+                });
+            });
+        }
+        
+        // Save cart to localStorage
+        function saveCart() {
+            localStorage.setItem('soundstageCart', JSON.stringify(cart));
+        }
+        
+        // Add to cart functionality
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                const productName = this.dataset.product;
+                
+                // Find price based on product
+                let price = 0;
+                switch(productName) {
+                    case 'Sound System Professional':
+                        price = 2500000;
+                        break;
+                    case 'Lighting & Efek Panggung':
+                        price = 1500000;
+                        break;
+                    case 'Panggung Portable & Truss':
+                        price = 3000000;
+                        break;
+                    case 'Rental Alat Musik':
+                        price = 500000;
+                        break;
+                    case 'LED Screen & Proyektor':
+                        price = 4000000;
+                        break;
+                    case 'Paket Event Lengkap':
+                        price = 10000000;
+                        break;
+                }
+                
+                // Check if product already in cart
+                const existingItemIndex = cart.findIndex(item => item.name === productName);
+                
+                if (existingItemIndex !== -1) {
+                    // Update quantity if already in cart
+                    cart[existingItemIndex].quantity += 1;
+                } else {
+                    // Add new item to cart
+                    cart.push({
+                        name: productName,
+                        price: price,
+                        duration: 1,
+                        quantity: 1
+                    });
+                }
+                
+                saveCart();
+                updateCartCount();
+                
+                // Show success message
+                alert(`${productName} telah ditambahkan ke keranjang!`);
+            });
+        });
+        
+        // Apply promo code
+        document.getElementById('applyPromo').addEventListener('click', function() {
+            const promoCode = document.getElementById('promoCode').value;
+            
+            if (promoCode.toUpperCase() === 'SOUND10') {
+                discountApplied = true;
+                updateCartModal();
+                alert('Kode promo berhasil diterapkan! Anda mendapatkan diskon 10%.');
+            } else {
+                discountApplied = false;
+                updateCartModal();
+                alert('Kode promo tidak valid.');
+            }
+        });
+        
+        // Checkout button
+        document.getElementById('checkoutBtn').addEventListener('click', function() {
+            if (cart.length === 0) {
+                alert('Keranjang Anda kosong. Silakan tambahkan produk terlebih dahulu.');
+                return;
+            }
+            
+            alert('Terima kasih! Pesanan Anda telah diterima. Tim kami akan menghubungi Anda dalam waktu 1x24 jam untuk konfirmasi pemesanan.');
+            
+            // Clear cart
+            cart = [];
+            saveCart();
+            updateCartCount();
+            updateCartModal();
+            discountApplied = false;
+            
+            // Close modal
+            const cartModal = bootstrap.Modal.getInstance(document.getElementById('cartModal'));
+            cartModal.hide();
+        });
+        
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Form submission
+        document.getElementById('rentalForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const product = document.getElementById('product').value;
+            
+            alert(`Terima kasih ${name}! Permintaan rental untuk ${product} telah kami terima. Tim kami akan menghubungi Anda dalam waktu 1x24 jam.`);
+            
+            // Reset form
+            this.reset();
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile navbar if open
+                    const navbarToggler = document.querySelector('.navbar-toggler');
+                    const navbarCollapse = document.querySelector('.navbar-collapse');
+                    
+                    if (navbarCollapse.classList.contains('show')) {
+                        navbarToggler.click();
+                    }
+                }
+            });
+        });
+        
+        // Initialize cart when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initCart();
+            
+            // Set min date for event date to today
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('eventDate').setAttribute('min', today);
+            
+            // Update navbar on scroll
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('.navbar');
+                if (window.pageYOffset > 50) {
+                    navbar.style.padding = '10px 0';
+                    navbar.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.3)';
+                } else {
+                    navbar.style.padding = '15px 0';
+                    navbar.style.boxShadow = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
